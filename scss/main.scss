@@ -15,20 +15,61 @@
 		height: $base-tamanio-esfera;
 		border-radius:$base-tamanio-esfera/2;
 		padding: $base-tamanio-esfera/4;
+		animation: pulse 2s infinite;
 	}
+	@-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 #ff9933;
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px #ff9933;
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 #ff9933;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 #ff9933;
+      box-shadow: 0 0 0 0 #ff9933;
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+   }
 
 	.estrella-1{
 		@include star;
+		@include star-center(34px, 36px);
 	}
 	.estrella-2{
 		@include star-center(30px, 10px);
 		@include star(20px);
 	}
 	.estrella-3{
-		@include star-center(15px,15px);
+		@include star-center(21px,15px);
 		@include star(15px);
 	}
 	.estrella-4{
 		@include star(15px);
+		@include star-center(22px, 12px);
 	}
+	.estrella-5{
+		@include star(15px);
+		@include star-center(17px, 12px);
+	}
+	.estrella-6{
+		@include star(15px);
+		@include star-center(13px, 12px);
+	}
+	.estrella-7{
+		@include star(13px);
+		@include star-center(10px, 12px);
+	}
+	@include on-circle($item-count: 7, $circle-size: 20em, $item-size: 6em); 
 }
